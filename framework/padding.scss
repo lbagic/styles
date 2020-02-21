@@ -1,0 +1,31 @@
+$padding-map: (
+  0: 0,
+  0p25: 0.25rem,
+  0p5: 0.5rem,
+  0p75: 0.75rem,
+  1: 1rem,
+  1p5: 1.5rem,
+  2: 2rem,
+  2p5: 2.5rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+  6: 6rem,
+  8: 8rem,
+  10: 10rem,
+  12: 12rem,
+  14: 14rem,
+  16: 16rem,
+  18: 18rem,
+  20: 20rem,
+  22: 22rem,
+  24: 24rem,
+);
+
+@include generate(p, padding, $padding-map, breakpoints);
+@include generate(pt, padding-top, $padding-map, breakpoints);
+@include generate(pb, padding-bottom, $padding-map, breakpoints);
+@include generate(pl, padding-left, $padding-map, breakpoints);
+@include generate(pr, padding-right, $padding-map, breakpoints);
+@include generate(ph, padding-left padding-right, $padding-map, breakpoints);
+@include generate(pv, padding-top padding-bottom, $padding-map, breakpoints);

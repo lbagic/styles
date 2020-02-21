@@ -1,0 +1,34 @@
+@mixin extendList($selectors) {
+  @if $selectors != null {
+    @each $selector in $selectors {
+      @extend #{fullSelector($selector)};
+    }
+  }
+}
+
+@mixin extendMap($map, $baseExtensions: null) {
+  $localExtensions: map-get($map, extend);
+  @each $key, $value in $map {
+    @if $key != extend {
+      &#{if($key == 'base', '', -#{$key})} {
+        @if type-of($value) == 'map' {
+          @include extendMap($value, $baseExtensions);
+        } @else {
+          @include extendList($value);
+          @include extendList($baseExtensions);
+          @include extendList($localExtensions);
+        }
+      }
+    }
+  }
+}
+
+@mixin extend($selector, $extensions, $baseExtensions: null) {
+  #{fullSelector($selector)} {
+    @if type-of($extensions) == 'map' {
+      @include extendMap($extensions, $baseExtensions);
+    } @else {
+      @include extendList($extensions);
+    }
+  }
+}

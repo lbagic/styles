@@ -1,0 +1,79 @@
+@mixin _generateClass($selector, $property, $value) {
+  #{$selector} {
+    #{$property}: $value;
+  }
+}
+
+@mixin _generateState($selector, $state, $property, $value, $options: null) {
+  @if index($options, $state) {
+    $selector: stateSelector($selector, $state);
+    @include _generateClass($selector, $property, $value);
+  }
+}
+
+@mixin _generateClasses($plainSelector, $properties, $value, $options: null) {
+  $selector: fullSelector($plainSelector);
+  @each $property in $properties {
+    @include _generateClass($selector, $property, $value);
+    @include _generateState($selector, hover, $property, $value, $options);
+    @include _generateState($selector, focus, $property, $value, $options);
+    @include _generateState($selector, active, $property, $value, $options);
+    @include _generateState($selector, disabled, $property, $value, $options);
+  }
+}
+
+@mixin _generateBreakpoints(
+  $plainSelector,
+  $properties,
+  $value,
+  $options: null
+) {
+  @if index($options, breakpoints) {
+    @each $breakpoint, $size in $breakpoint-map {
+      $breakpointSelector: breakpointSelector($plainSelector, $breakpoint);
+      @media (min-width: $size) {
+        @include _generateClasses(
+          $breakpointSelector,
+          $properties,
+          $value,
+          $options
+        );
+      }
+    }
+  }
+}
+
+@mixin _classGenerator($plainSelector, $properties, $value, $options: null) {
+  @include _generateClasses($plainSelector, $properties, $value, $options);
+  @include _generateBreakpoints($plainSelector, $properties, $value, $options);
+}
+
+@mixin generate($plainSelector, $properties, $keyMap, $options: null) {
+  @each $key, $value in $keyMap {
+    $plainKeySelector: keySelector($plainSelector, $key);
+    @if type-of($value) == 'map' {
+      @include generate($plainKeySelector, $properties, $value, $options);
+    } @else {
+      @include _classGenerator(
+        $plainKeySelector,
+        $properties,
+        $value,
+        $options
+      );
+    }
+  }
+}
+
+@mixin generateProps($plainSelector, $propKeyValMap, $options: null) {
+  @each $prop, $map in $propKeyValMap {
+    @include generate($plainSelector, $prop, $map, $options);
+  }
+}
+
+@mixin generateSelectors($selectorPropValMap, $options: null) {
+  @each $selector, $propValueMap in $selectorPropValMap {
+    @each $prop, $value in $propValueMap {
+      @include _classGenerator($selector, $prop, $value, $options);
+    }
+  }
+}

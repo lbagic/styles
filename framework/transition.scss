@@ -1,0 +1,16 @@
+$transition-map: (
+  transition-duration: (
+    slow: 0.3s,
+    base: 0.2s,
+    quick: 0.15s,
+  ),
+  transition-property: (
+    all: all,
+    bg: background,
+    color: color,
+    colors: background color fill,
+    fill: fill,
+  ),
+);
+
+@include generateProps(transition, $transition-map);

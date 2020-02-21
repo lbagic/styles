@@ -1,0 +1,13 @@
+$display-selector-map: (
+  block: (
+    display: block,
+  ),
+  box: (
+    box-sizing: border-box,
+  ),
+  display-none: (
+    display: none,
+  ),
+);
+
+@include generateSelectors($display-selector-map, breakpoints);

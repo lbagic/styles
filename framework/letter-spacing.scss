@@ -1,0 +1,7 @@
+$letter-spacing-map: (
+  0: 0px,
+  1: 1px,
+  2: 2px,
+);
+
+@include generate(letter-spacing, letter-spacing, $letter-spacing-map);

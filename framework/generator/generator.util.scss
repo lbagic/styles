@@ -1,0 +1,26 @@
+@function str-build($strings...) {
+  $res: '';
+  @each $string in $strings {
+    $res: str-insert($res, quote($string), 200);
+  }
+  @return $res;
+}
+
+@function fullSelector($selector) {
+  @return str-build($selector-type, $selector);
+}
+
+@function keySelector($selector, $key) {
+  @if $key != 'base' {
+    $selector: str-build($selector, $selector-key-divider, $key);
+  }
+  @return $selector;
+}
+
+@function breakpointSelector($selector, $breakpoint) {
+  @return str-build($breakpoint, $selector-breakpoint-divider, $selector);
+}
+
+@function stateSelector($selector, $state) {
+  @return str-build($selector, $selector-state-divider, $state, ':', $state);
+}

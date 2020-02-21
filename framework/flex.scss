@@ -1,0 +1,42 @@
+$flex-prop-map: (
+  display: (
+    base: flex,
+    inline: inline-flex,
+  ),
+  flex-direction: (
+    row: row,
+    column: column,
+  ),
+  flex-wrap: (
+    wrap: wrap,
+  ),
+  flex-grow: (
+    grow: 1,
+  ),
+  justify-content: (
+    left: flex-start,
+    right: flex-end,
+    center: center,
+    between: space-between,
+    around: space-around,
+  ),
+  align-items: (
+    top: flex-start,
+    bot: flex-end,
+    mid: center,
+    stretch: stretch,
+  ),
+  flex: (
+    item-grow: 1 0 auto,
+  ),
+  align-self: (
+    item: (
+      top: flex-start,
+      bot: flex-end,
+      mid: center,
+      stretch: stretch,
+    ),
+  ),
+);
+
+@include generateProps(flex, $flex-prop-map, breakpoints);

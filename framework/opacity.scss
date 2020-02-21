@@ -1,0 +1,9 @@
+$opacity-map: (
+  1: 1,
+  0p75: 0.75,
+  0p5: 0.5,
+  0p25: 0.25,
+  0: 0,
+);
+
+@include generate(opacity, opacity, $opacity-map, hover);
