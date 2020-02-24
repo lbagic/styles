@@ -1,6 +1,7 @@
 $width-prop-map: (
   width: (
     auto: auto,
+    viewport: 100vw,
     '1-1': 100%,
     '1-2': 50%,
     '1-3': unquote('calc(100% * 1 / 3.001)'),

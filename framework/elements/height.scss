@@ -1,4 +1,6 @@
 $height-map: (
+  auto: auto,
+  viewport: 100vh,
   '1-1': 100%,
   1: 1px,
   2: 2px,
@@ -21,7 +23,6 @@ $height-map: (
   650: 650px,
   700: 700px,
   750: 750px,
-  auto: auto,
 );
 
 @include generate(h, height, $height-map, breakpoints);
