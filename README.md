@@ -173,11 +173,6 @@ $button-colors: (
 // outputs
 %button-blue {...}
 %button-red {...}
-%button-auto {...}
-%button-tiny {...}
-%button-small {...}
-%button-medium {...}
-%button-large {...}
 ```
 
 ```scss
