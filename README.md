@@ -1,4 +1,4 @@
-Sass utility-oriented framework with helper functions for writing more concise and organized code.
+Sass utility-oriented framework with helper functions for writing more concise and organized code. Uses placeholder selectors to limit css footprint to only used classes.
 
 ## Installation
 
@@ -33,13 +33,13 @@ module.exports = {
 `framewrok/components/...` - components built by extending base elements  
 `components/...` - place for webpage specific components
 
-### Info
+## Info
 
 Framework **elements are built with `generator mixins`** that generate css placeholders (or classes; configurable in _generator.settings.scss_).
 
 Framework (and user) **components are created with `extender mixins`**.
 
-**Use extender mixins** (extendMap & extendList) for creating custom components styles!
+**Use extender mixins (`extendMap` & `extendList`) for creating custom webpage component styles!**
 
 ### Generator mixins
 
