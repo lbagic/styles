@@ -26,13 +26,18 @@ $text-prop-map: (
     right: right,
     center: center,
   ),
+  text-shadow: (
+    shadow: 1px 1px #212121,
+  ),
 );
 
 $text-map-title: (
   small: 1.5rem,
-  base: 2rem,
+  medium: 2rem,
+  base: 2.5rem,
   large: 3rem,
-  xlarge: 4rem,
+  xlarge: 3.5rem,
+  xxlarge: 4rem,
 );
 
 @include generate(title, font-size, $text-map-title, breakpoints);

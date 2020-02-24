@@ -1,0 +1,13 @@
+$display-prop-map: (
+  display: (
+    block: block,
+    inline-block: inline-block,
+    none: none,
+    initial: initial,
+  ),
+  box-sizing: (
+    box: border-box,
+  ),
+);
+
+@include generateProps(display, $display-prop-map, breakpoints);

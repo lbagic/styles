@@ -33,7 +33,7 @@ button,
 input,
 select,
 textarea {
-  background: inherit;
+  background: none;
   border-radius: 0;
   border: solid 1px;
   box-sizing: border-box;
@@ -41,7 +41,7 @@ textarea {
   font-family: inherit;
   font-size: 1em;
   margin: 0;
-  outline: none;
+  // outline: none;
 }
 textarea {
   overflow: auto;

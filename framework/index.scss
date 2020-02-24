@@ -1,24 +1,4 @@
 @import './variables/';
 @import './generator/';
-
-@import './background.scss';
-@import './border.scss';
-@import './color.scss';
-@import './cursor.scss';
-@import './decoration.scss';
-@import './display.scss';
-@import './fill.scss';
-@import './fillet.scss';
-@import './fixed.scss';
-@import './flex.scss';
-@import './font.scss';
-@import './grid.scss';
-@import './height.scss';
-@import './letter-spacing.scss';
-@import './margin.scss';
-@import './opacity.scss';
-@import './padding.scss';
-@import './shadow.scss';
-@import './text.scss';
-@import './transition.scss';
-@import './width.scss';
+@import './elements/';
+@import './components/';

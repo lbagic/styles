@@ -1,8 +1,0 @@
-$fixed-selector-map: (
-  fixed-top: (
-    top: 0,
-    position: fixed,
-  ),
-);
-
-@include generateSelectors($fixed-selector-map);
