@@ -1,0 +1,6 @@
+$container-map: (
+  extend: mh-auto,
+  base: w-1-1 s_w-500 l_w-700,
+);
+
+@include extend(container, $container-map);

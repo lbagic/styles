@@ -1,13 +1,22 @@
-$display-prop-map: (
-  display: (
-    block: block,
-    inline-block: inline-block,
-    none: none,
-    initial: initial,
+$display-selector-map: (
+  block: (
+    display: block,
   ),
-  box-sizing: (
-    box: border-box,
+  inline: (
+    display: inline,
+  ),
+  inline-block: (
+    display: inline-block,
+  ),
+  display-none: (
+    display: none,
+  ),
+  display-initial: (
+    display: initial,
+  ),
+  box: (
+    box-sizing: border-box,
   ),
 );
 
-@include generateProps(display, $display-prop-map, breakpoints);
+@include generateSelectors($display-selector-map, breakpoints);
