@@ -1,1 +1,3 @@
 *.code-workspace
+/components
+!/components/index.scss
