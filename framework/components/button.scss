@@ -1,17 +1,9 @@
 $button-colors: (
   extend: transition transition-bg,
-  purple: bg-purple bg-purple-500--hover bg-purple-600--active color-white,
-  orange: bg-orange-300 bg-orange--hover bg-orange-500--active color-white,
+  purple: bg-purple bg-purple-500--hover bg-purple-600--active
+    bg-purple-600--focus color-white,
+  orange: bg-orange-300 bg-orange--hover bg-orange-500--active
+    bg-orange-500--focus color-white,
 );
 
-// $button-sizes: (
-//   extend: text uppercase letter-spacing-1,
-//   auto: ph-2 pv-1 text-medium,
-//   tiny: w-100 pv-1 text-medium,
-//   small: w-150 pv-2,
-//   medium: w-250 pv-2p5,
-//   large: w-350 pv-3,
-// );
-
 @include extend(button, $button-colors);
-// @include extend(button, $button-sizes);

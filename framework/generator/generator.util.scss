@@ -6,21 +6,44 @@
   @return $res;
 }
 
-@function fullSelector($selector) {
+@function buildSelector($selector) {
   @return str-build($selector-type, $selector);
 }
 
-@function keySelector($selector, $key) {
-  @if $key != 'base' {
-    $selector: str-build($selector, $selector-key-divider, $key);
+@function appendKey($key, $key2) {
+  @if $key2 != 'base' {
+    $key: str-build($key, $selector-key-divider, $key2);
   }
-  @return $selector;
+  @return $key;
 }
 
-@function breakpointSelector($selector, $breakpoint) {
+@function prependBreakpoint($selector, $breakpoint) {
   @return str-build($breakpoint, $selector-breakpoint-divider, $selector);
 }
 
-@function stateSelector($selector, $state) {
+@function appendState($selector, $state) {
   @return str-build($selector, $selector-state-divider, $state, ':', $state);
+}
+
+@function map-flatten($map) {
+  $deepFlag: false;
+  @each $key, $value in $map {
+    @if type-of($value) == 'map' {
+      $deepFlag: true;
+      $map: map-remove($map, $key);
+      @each $dKey, $dValue in $value {
+        $dKey: appendKey($key, $dKey);
+        $map: map-merge(
+          $map,
+          (
+            $dKey: $dValue,
+          )
+        );
+      }
+    }
+  }
+  @if $deepFlag {
+    $map: map-flatten($map);
+  }
+  @return $map;
 }

@@ -1,0 +1,6 @@
+$float-map: (
+  left: left,
+  right: right,
+);
+
+@include generate(float, float, $float-map);
