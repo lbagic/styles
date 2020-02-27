@@ -1,0 +1,6 @@
+$wrap-map: (
+  nowrap: nowrap,
+  wrap: pre-line,
+);
+
+@include generate(wrap, white-space, $wrap-map);
