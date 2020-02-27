@@ -1,6 +1,10 @@
-$wrap-map: (
-  nowrap: nowrap,
-  wrap: pre-line,
+$wrap-selector-map: (
+  wrap: (
+    white-space: pre-line,
+  ),
+  nowrap: (
+    white-space: nowrap,
+  ),
 );
 
-@include generate(wrap, white-space, $wrap-map);
+@include generateSelectors($wrap-selector-map);
