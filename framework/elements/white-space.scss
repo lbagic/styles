@@ -1,0 +1,9 @@
+$wrap-selector-map: (
+  normal: normal,
+  nowrap: nowrap,
+  pre: pre,
+  pre-wrap: pre-wrap,
+  pre-line: pre-line,
+);
+
+@include generate(white-space, white-space, $white-space-map);
