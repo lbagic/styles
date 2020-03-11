@@ -1,80 +1,45 @@
-@mixin _generateClass($plainSelector, $properties, $value) {
+@mixin _generateClass($plainSelector, $props, $val) {
   #{buildSelector($plainSelector)} {
-    @each $property in $properties {
-      #{$property}: $value;
+    @each $property in $props {
+      #{$property}: $val;
     }
   }
 }
 
-@mixin _generateState(
-  $plainSelector,
-  $state,
-  $properties,
-  $value,
-  $options: null
-) {
+@mixin _genState($plainSelector, $state, $props, $val, $options: null) {
   @if index($options, $state) {
-    @include _generateClass(
-      appendState($plainSelector, $state),
-      $properties,
-      $value
-    );
+    @include _generateClass(appendState($plainSelector, $state), $props, $val);
   }
 }
 
-@mixin _generateClasses($plainSelector, $properties, $flatMap, $options: null) {
-  @each $key, $value in $flatMap {
+@mixin _genClasses($plainSelector, $props, $flatMap, $options: null) {
+  @each $key, $val in $flatMap {
     $keySelector: appendKey($plainSelector, $key);
-    @include _generateClass($keySelector, $properties, $value);
-    @include _generateState($keySelector, hover, $properties, $value, $options);
-    @include _generateState($keySelector, focus, $properties, $value, $options);
-    @include _generateState(
-      $keySelector,
-      active,
-      $properties,
-      $value,
-      $options
-    );
-    @include _generateState(
-      $keySelector,
-      disabled,
-      $properties,
-      $value,
-      $options
-    );
+    @include _generateClass($keySelector, $props, $val);
+    @include _genState($keySelector, hover, $props, $val, $options);
+    @include _genState($keySelector, valid, $props, $val, $options);
+    @include _genState($keySelector, invalid, $props, $val, $options);
+    @include _genState($keySelector, focus, $props, $val, $options);
+    @include _genState($keySelector, active, $props, $val, $options);
+    @include _genState($keySelector, disabled, $props, $val, $options);
   }
 }
 
-@mixin _generateBreakpoints(
-  $plainSelector,
-  $properties,
-  $flatMap,
-  $options: null
-) {
+@mixin _generateBreakpoints($plainSelector, $props, $flatMap, $options: null) {
   @if index($options, breakpoints) {
     @each $breakpoint, $size in $breakpoint-map {
       $breakpointSelector: prependBreakpoint($plainSelector, $breakpoint);
       @media (min-width: $size) {
-        @include _generateClasses(
-          $breakpointSelector,
-          $properties,
-          $flatMap,
-          $options
-        );
+        @include _genClasses($breakpointSelector, $props, $flatMap, $options);
       }
     }
   }
 }
 
-@mixin generate($plainSelector, $properties, $keyMap, $options: null) {
+@mixin generate($plainSelector, $props, $keyMap, $options: null) {
   $flatMap: map-flatten($keyMap);
-  @include _generateClasses($plainSelector, $properties, $flatMap, $options);
-  @include _generateBreakpoints(
-    $plainSelector,
-    $properties,
-    $flatMap,
-    $options
-  );
+  @include _genClasses($plainSelector, $props, $flatMap, $options);
+  @include _generateBreakpoints($plainSelector, $props, $flatMap, $options);
 }
 
 @mixin generateProps($plainSelector, $propKeyValMap, $options: null) {
@@ -85,12 +50,12 @@
 
 @mixin generateSelectors($selectorPropValMap, $options: null) {
   @each $selector, $propValueMap in $selectorPropValMap {
-    @each $prop, $value in $propValueMap {
-      @include _generateClasses(
+    @each $prop, $val in $propValueMap {
+      @include _genClasses(
         $selector,
         $prop,
         (
-          base: $value,
+          base: $val,
         ),
         $options
       );
@@ -98,7 +63,7 @@
         $selector,
         $prop,
         (
-          base: $value,
+          base: $val,
         ),
         $options
       );
