@@ -13,5 +13,5 @@ $border-prop-map: (
 @include generateProps(
   border,
   $border-prop-map,
-  breakpoints active hover focus
+  breakpoints active hover focus valid invalid
 );

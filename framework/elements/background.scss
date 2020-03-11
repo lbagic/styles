@@ -1,1 +1,6 @@
-@include generate(bg, background, $color-map, hover active focus);
+@include generate(
+  bg,
+  background,
+  $color-map,
+  hover active focus valid invalid disabled
+);
