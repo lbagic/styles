@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 
 @import './base.scss';
-@import './framework/';
+@import './framework/base/_framework.base.scss';
+@import './framework/components/_framework.components.scss';
+@import './framework/elements/_framework.elements.scss';
 @import './components/';

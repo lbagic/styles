@@ -7,7 +7,7 @@ $border-prop-map: (
     4: 4px solid,
     5: 5px solid,
   ),
-  border-color: $color-map,
+  border-color: $border-color-map,
 );
 
 @include generateProps(

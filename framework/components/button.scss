@@ -1,9 +1,17 @@
-$button-colors: (
-  // extend: transition transition-bg,
-    // purple: bg-purple bg-purple-500--hover bg-purple-600--active
-    //   bg-purple-600--focus color-white,
-    // orange: bg-orange-300 bg-orange--hover bg-orange-500--active
-    //   bg-orange-500--focus color-white,
+$button-map: (
+  extend: transition transition-bg bg-grey--disabled uppercase p-1,
+  primary: bg-primary bg-primary-dark--hover bg-primary-darker--active
+    bg-primary-darker--focus color-white,
+  secondary: bg-secondary bg-secondary-dark--hover bg-secondary-darker--active
+    bg-secondary-darker--focus color-white,
 );
 
-// @include extend(button, $button-colors);
+$button-sizes: (
+  small: w-100,
+  medium: w-200,
+  large: w-400,
+  expand: w-1-1,
+);
+
+@include extend(button, $button-map);
+@include extend(button, $button-sizes);

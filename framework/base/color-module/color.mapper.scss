@@ -1,0 +1,34 @@
+@import './materialcolors.scss';
+
+@function _getColor($key) {
+  $color: map-get($material-colors, $key);
+  @if $color == null {
+    @error "Can't find color in materialcolors.scss";
+  }
+  @return $color;
+}
+
+@function _colorCalculator($value) {
+  $transparencyIndex: str-index($value, '-t');
+  $color: null;
+  @if $transparencyIndex == null {
+    $color: _getColor($value);
+  } @else {
+    $colorKey: str-slice($value, 1, $transparencyIndex - 1);
+    $transparency: calc(#{str-slice($value, $transparencyIndex + 2)} / 100);
+    $color: rgba(_getColor($colorKey), $transparency);
+  }
+  @return $color;
+}
+
+@function colorMapper($map) {
+  @each $key, $value in $map {
+    $map: map-merge(
+      $map,
+      (
+        $key: _colorCalculator($value),
+      )
+    );
+  }
+  @return $map;
+}

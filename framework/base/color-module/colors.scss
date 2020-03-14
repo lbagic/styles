@@ -1,0 +1,48 @@
+@import './color.mapper.scss';
+
+// valid values:
+// 1. material colors + white, light, dark, black
+// 2. any of the above with '-t##' suffix where ## represents transparency percent
+
+$bw-colors: colorMapper(
+  (
+    white: 'white',
+    light: light,
+    silver: grey-200,
+    muted: grey-300,
+    muted-dark: grey-400,
+    muted-darker: grey-500,
+    grey: grey-600,
+    grey-dark: grey-700,
+    grey-darker: grey-800,
+    dark: dark,
+    black: 'black',
+  )
+);
+
+$palette-colors: colorMapper(
+  (
+    success: green-300,
+    warning: orange-700,
+    danger: red-800,
+    primary: blue-400,
+    primary-dark: blue-500,
+    primary-darker: blue-600,
+    secondary: pink-400,
+    secondary-dark: pink-500,
+    secondary-darker: pink-600,
+  )
+);
+
+$transparent-colors: colorMapper(
+  (
+    black-t50: black-t50,
+  )
+);
+
+$base-colors: map-merge($bw-colors, $palette-colors);
+
+$bg-color-map: map-merge-multiple($base-colors, $transparent-colors);
+$fill-color-map: $base-colors;
+$border-color-map: $base-colors;
+$text-color-map: $base-colors;

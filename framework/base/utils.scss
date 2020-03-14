@@ -47,3 +47,11 @@
   }
   @return $map;
 }
+
+@function map-merge-multiple($maps...) {
+  $finalMap: ();
+  @each $map in $maps {
+    $finalMap: map-merge($finalMap, $map);
+  }
+  @return $finalMap;
+}
