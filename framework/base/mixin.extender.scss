@@ -14,45 +14,22 @@
   }
 }
 
-@mixin _selectorExtender($selector) {
-  $selector: buildSelector($selector);
-  $stateIndex: str-index($selector, $selector-state-divider);
-  @if $stateIndex == null {
-    @extend #{$selector};
-  } @else {
-    $states: str-slice($selector, $stateIndex + 2);
-    @if str-index($selector, '&') {
-      $selector: str-slice($selector, 0, $stateIndex - 2);
-      @extend #{$selector};
-    } @else {
-      $selector: str-slice($selector, 0, $stateIndex - 1);
-    }
-    @include _stateExtender($selector, $states);
-  }
-}
-
-@mixin _breakpointExtender($selector, $breakpoint) {
-  $breakpoint-value: map-get($breakpoint-map, $breakpoint);
-  @if $breakpoint-value == null {
-    @error "Breakpoint '#{$breakpoint}' does not exist.";
-  }
-  @media (min-width: $breakpoint-value) {
-    @include _selectorExtender($selector);
-  }
-}
-
 @mixin extendList($selectors) {
   @if $selectors != null {
     @each $selector in $selectors {
-      $breakpointIndex: str-index($selector, $selector-breakpoint-divider);
-      $breakpoint: null;
-      @if $breakpointIndex {
-        $breakpoint: str-slice($selector, 0, $breakpointIndex - 1);
-        $selector: str-slice($selector, $breakpointIndex + 1);
-      }
-      @include _selectorExtender($selector);
-      @if $breakpointIndex {
-        @include _breakpointExtender($selector, $breakpoint);
+      $selector: buildSelector($selector);
+      $stateIndex: str-index($selector, $selector-state-divider);
+      @if $stateIndex == null {
+        @extend #{$selector};
+      } @else {
+        $states: str-slice($selector, $stateIndex + 2);
+        @if str-index($selector, '&') {
+          $selector: str-slice($selector, 0, $stateIndex - 2);
+          @extend #{$selector};
+        } @else {
+          $selector: str-slice($selector, 0, $stateIndex - 1);
+        }
+        @include _stateExtender($selector, $states);
       }
     }
   }

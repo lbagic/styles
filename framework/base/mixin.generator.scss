@@ -1,4 +1,4 @@
-@mixin _genClasses($plainSelector, $props, $flatMap) {
+@mixin _genClasses($plainSelector, $props, $flatMap, $options: null) {
   @each $key, $val in $flatMap {
     $selector: buildSelector(appendKey($plainSelector, $key));
     #{$selector} {
@@ -9,18 +9,30 @@
   }
 }
 
-@mixin generate($plainSelector, $props, $keyMap) {
-  $flatMap: map-flatten($keyMap);
-  @include _genClasses($plainSelector, $props, $flatMap);
-}
-
-@mixin generateProps($plainSelector, $propKeyValMap) {
-  @each $prop, $map in $propKeyValMap {
-    @include generate($plainSelector, $prop, $map);
+@mixin _generateBreakpoints($plainSelector, $props, $flatMap, $options: null) {
+  @if index($options, breakpoints) {
+    @each $breakpoint, $size in $breakpoint-map {
+      $breakpointSelector: prependBreakpoint($plainSelector, $breakpoint);
+      @media (min-width: $size) {
+        @include _genClasses($breakpointSelector, $props, $flatMap, $options);
+      }
+    }
   }
 }
 
-@mixin generateSelectors($selectorPropValMap) {
+@mixin generate($plainSelector, $props, $keyMap, $options: null) {
+  $flatMap: map-flatten($keyMap);
+  @include _genClasses($plainSelector, $props, $flatMap, $options);
+  @include _generateBreakpoints($plainSelector, $props, $flatMap, $options);
+}
+
+@mixin generateProps($plainSelector, $propKeyValMap, $options: null) {
+  @each $prop, $map in $propKeyValMap {
+    @include generate($plainSelector, $prop, $map, $options);
+  }
+}
+
+@mixin generateSelectors($selectorPropValMap, $options: null) {
   @each $selector, $propValueMap in $selectorPropValMap {
     @each $prop, $val in $propValueMap {
       @include _genClasses(
@@ -28,16 +40,17 @@
         $prop,
         (
           base: $val,
-        )
+        ),
+        $options
+      );
+      @include _generateBreakpoints(
+        $selector,
+        $prop,
+        (
+          base: $val,
+        ),
+        $options
       );
     }
   }
 }
-
-// @include _generateClass($keySelector, $props, $val);
-// @include _genState($keySelector, hover, $props, $val, $options);
-// @include _genState($keySelector, valid, $props, $val, $options);
-// @include _genState($keySelector, invalid, $props, $val, $options);
-// @include _genState($keySelector, focus, $props, $val, $options);
-// @include _genState($keySelector, active, $props, $val, $options);
-// @include _genState($keySelector, disabled, $props, $val, $options);
