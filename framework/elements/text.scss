@@ -40,6 +40,6 @@ $text-map-title: (
   xxlarge: 4rem,
 );
 
-@include generate(title, font-size, $text-map-title, breakpoints);
-@include generateProps(text, $text-prop-map, breakpoints);
+@include generate(title, font-size, $text-map-title);
+@include generateProps(text, $text-prop-map);
 @include generateSelectors($text-selector-map);

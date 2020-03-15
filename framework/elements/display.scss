@@ -19,4 +19,4 @@ $display-selector-map: (
   ),
 );
 
-@include generateSelectors($display-selector-map, breakpoints);
+@include generateSelectors($display-selector-map);

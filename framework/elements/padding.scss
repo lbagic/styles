@@ -22,10 +22,10 @@ $padding-map: (
   24: 24rem,
 );
 
-@include generate(p, padding, $padding-map, breakpoints);
-@include generate(pt, padding-top, $padding-map, breakpoints);
-@include generate(pb, padding-bottom, $padding-map, breakpoints);
-@include generate(pl, padding-left, $padding-map, breakpoints);
-@include generate(pr, padding-right, $padding-map, breakpoints);
-@include generate(ph, padding-left padding-right, $padding-map, breakpoints);
-@include generate(pv, padding-top padding-bottom, $padding-map, breakpoints);
+@include generate(p, padding, $padding-map);
+@include generate(pt, padding-top, $padding-map);
+@include generate(pb, padding-bottom, $padding-map);
+@include generate(pl, padding-left, $padding-map);
+@include generate(pr, padding-right, $padding-map);
+@include generate(ph, padding-left padding-right, $padding-map);
+@include generate(pv, padding-top padding-bottom, $padding-map);

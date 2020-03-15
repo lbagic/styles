@@ -5,4 +5,4 @@ $decoration-map: (
   none: none,
 );
 
-@include generate(decoration, text-decoration, $decoration-map, hover active);
+@include generate(decoration, text-decoration, $decoration-map);

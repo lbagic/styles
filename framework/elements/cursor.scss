@@ -3,4 +3,4 @@ $cursor-map: (
   pointer: pointer,
 );
 
-@include generate(cursor, cursor, $cursor-map, disabled);
+@include generate(cursor, cursor, $cursor-map);

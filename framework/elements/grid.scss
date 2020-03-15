@@ -63,6 +63,6 @@ $grid-rows-prop-map: (
   ),
 );
 
-@include generateProps(grid, $grid-prop-map, breakpoints);
-@include generateProps(gtc, $grid-columns-prop-map, breakpoints);
-@include generateProps(gtr, $grid-rows-prop-map, breakpoints);
+@include generateProps(grid, $grid-prop-map);
+@include generateProps(gtc, $grid-columns-prop-map);
+@include generateProps(gtr, $grid-rows-prop-map);

@@ -20,4 +20,4 @@ $shadow-map: (
   none: none,
 );
 
-@include generate(shadow, box-shadow, $shadow-map, hover);
+@include generate(shadow, box-shadow, $shadow-map);

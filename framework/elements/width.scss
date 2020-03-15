@@ -1,4 +1,4 @@
-$width-values: (
+$width-map: (
   auto: auto,
   viewport: 100vw,
   '1-1': 100%,
@@ -37,7 +37,7 @@ $width-values: (
   1600: 1600px,
 );
 
-$min-width-values: (
+$min-width-map: (
   '1-1': 100%,
   0: 0px,
   50: 50px,
@@ -57,8 +57,5 @@ $min-width-values: (
   750: 750px,
 );
 
-$width-map: map-merge($width-values, $breakpoint-map);
-$min-width-map: map-merge($min-width-values, $breakpoint-map);
-
-@include generate(w, width, $width-map, breakpoints);
-@include generate(mw, min-width, $min-width-map);
+@include generate(w, width, map-merge($width-map, $breakpoint-map));
+@include generate(mw, min-width, map-merge($min-width-map, $breakpoint-map));

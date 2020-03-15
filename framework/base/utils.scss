@@ -17,14 +17,6 @@
   @return $key;
 }
 
-@function prependBreakpoint($selector, $breakpoint) {
-  @return str-build($breakpoint, $selector-breakpoint-divider, $selector);
-}
-
-@function appendState($selector, $state) {
-  @return str-build($selector, $selector-state-divider, $state, ':', $state);
-}
-
 @function map-flatten($map) {
   $deepFlag: false;
   @each $key, $value in $map {

@@ -25,5 +25,5 @@ $height-map: (
   750: 750px,
 );
 
-@include generate(h, height, $height-map, breakpoints);
+@include generate(h, height, $height-map);
 @include generate(mh, min-height, $height-map);

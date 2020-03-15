@@ -30,8 +30,4 @@ $border-prop-map: (
   border-color: $border-color-map,
 );
 
-@include generateProps(
-  border,
-  $border-prop-map,
-  breakpoints active hover focus valid invalid
-);
+@include generateProps(border, $border-prop-map);

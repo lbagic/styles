@@ -6,4 +6,4 @@ $opacity-map: (
   0: 0,
 );
 
-@include generate(opacity, opacity, $opacity-map, hover);
+@include generate(opacity, opacity, $opacity-map);
