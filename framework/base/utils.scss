@@ -17,6 +17,10 @@
   @return $key;
 }
 
+@function prependBreakpoint($selector, $breakpoint) {
+  @return str-build($breakpoint, $selector-breakpoint-divider, $selector);
+}
+
 @function map-flatten($map) {
   $deepFlag: false;
   @each $key, $value in $map {

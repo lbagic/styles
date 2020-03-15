@@ -57,5 +57,10 @@ $min-width-map: (
   750: 750px,
 );
 
-@include generate(w, width, map-merge($width-map, $breakpoint-map));
+@include generate(
+  w,
+  width,
+  map-merge($width-map, $breakpoint-map),
+  breakpoints
+);
 @include generate(mw, min-width, map-merge($min-width-map, $breakpoint-map));

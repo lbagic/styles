@@ -23,10 +23,10 @@ $margin-map: (
   24: 24rem,
 );
 
-@include generate(m, margin, $margin-map);
-@include generate(mt, margin-top, $margin-map);
-@include generate(mb, margin-bottom, $margin-map);
-@include generate(ml, margin-left, $margin-map);
-@include generate(mr, margin-right, $margin-map);
-@include generate(mh, margin-left margin-right, $margin-map);
-@include generate(mv, margin-top margin-bottom, $margin-map);
+@include generate(m, margin, $margin-map, breakpoints);
+@include generate(mt, margin-top, $margin-map, breakpoints);
+@include generate(mb, margin-bottom, $margin-map, breakpoints);
+@include generate(ml, margin-left, $margin-map, breakpoints);
+@include generate(mr, margin-right, $margin-map, breakpoints);
+@include generate(mh, margin-left margin-right, $margin-map, breakpoints);
+@include generate(mv, margin-top margin-bottom, $margin-map, breakpoints);
