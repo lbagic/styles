@@ -2,6 +2,7 @@ a {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
+  outline: none;
 }
 a:focus,
 a::-moz-focus-inner {
@@ -43,7 +44,7 @@ textarea {
   font-family: inherit;
   font-size: 1em;
   margin: 0;
-  // outline: none;
+  outline: none;
 }
 textarea {
   overflow: auto;
