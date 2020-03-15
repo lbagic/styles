@@ -1,11 +1,31 @@
 $border-prop-map: (
-  border: (
-    0: 0px solid,
-    1: 1px solid,
-    2: 2px solid,
-    3: 3px solid,
-    4: 4px solid,
-    5: 5px solid,
+  border-style: (
+    base: solid,
+  ),
+  border-width: (
+    0: 0px,
+    1: 1px,
+    2: 2px,
+    5: 5px,
+  ),
+  border-bottom-width: (
+    bot-0: 0px,
+    bot-1: 1px,
+    bot-2: 2px,
+    bot-3: 3px,
+    bot-5: 5px,
+  ),
+  border-top-width: (
+    top-0: 0px,
+    top-1: 1px,
+    top-2: 2px,
+    top-5: 5px,
+  ),
+  border-left-width: (
+    left-0: 0px,
+    left-1: 1px,
+    left-2: 2px,
+    left-5: 5px,
   ),
   border-color: $border-color-map,
 );
