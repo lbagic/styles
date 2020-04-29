@@ -4,7 +4,7 @@
 // 1. material colors + white, light, dark, black
 // 2. any of the above with '-t##' suffix where ## represents transparency percent
 
-$bw-colors: colorMapper(
+$color-map: colorMapper(
   (
     white: 'white',
     light: light,
@@ -17,11 +17,7 @@ $bw-colors: colorMapper(
     grey-darker: grey-800,
     dark: dark,
     black: 'black',
-  )
-);
-
-$palette-colors: colorMapper(
-  (
+    black-t50: black-t50,
     success: green-300,
     warning: orange-700,
     danger: red-800,
@@ -33,16 +29,3 @@ $palette-colors: colorMapper(
     secondary-darker: pink-600,
   )
 );
-
-$transparent-colors: colorMapper(
-  (
-    black-t50: black-t50,
-  )
-);
-
-$base-colors: map-merge($bw-colors, $palette-colors);
-
-$bg-color-map: map-merge-multiple($base-colors, $transparent-colors);
-$fill-color-map: $base-colors;
-$border-color-map: $base-colors;
-$text-color-map: $base-colors;

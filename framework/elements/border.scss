@@ -27,7 +27,7 @@ $border-prop-map: (
     left-2: 2px,
     left-5: 5px,
   ),
-  border-color: $border-color-map,
+  border-color: $color-map,
 );
 
 @include generateProps(border, $border-prop-map);
