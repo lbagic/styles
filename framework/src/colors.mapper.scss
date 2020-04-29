@@ -1,9 +1,7 @@
-@import './materialcolors.scss';
-
 @function _getColor($key) {
   $color: map-get($material-colors, $key);
   @if $color == null {
-    @error "Can't find '#{$key}' color in materialcolors.scss";
+    @error "Can't find '#{$key}' color in colors.material.scss";
   }
   @return $color;
 }

@@ -1,6 +1,9 @@
 @import './utils.scss';
 
-@import './color-module/colors.scss';
+@import './colors.material.scss';
+@import './colors.mapper.scss';
+@import './colors.scss';
+
 @import './breakpoints.scss';
 
 @import './mixin.settings.scss';
