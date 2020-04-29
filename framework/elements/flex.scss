@@ -39,4 +39,4 @@ $flex-prop-map: (
   ),
 );
 
-@include generateProps(flex, $flex-prop-map);
+@include generateProps(flex, $flex-prop-map, breakpoints);
