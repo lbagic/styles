@@ -26,6 +26,22 @@ $flex-prop-map: (
     mid: center,
     stretch: stretch,
   ),
+  align-content: (
+    content: (
+      left: flex-start,
+      right: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around,
+    ),
+  ),
+  justify-items: (
+    items: (
+      left: flex-start,
+      right: flex-end,
+      center: center,
+    ),
+  ),
   flex: (
     item-grow: 1 0 auto,
   ),
