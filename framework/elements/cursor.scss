@@ -2,6 +2,9 @@ $cursor-selector-map: (
   pointer: (
     cursor: pointer,
   ),
+  cursor-default: (
+    cursor: default,
+  ),
 );
 
 @include generateSelectors($cursor-selector-map);

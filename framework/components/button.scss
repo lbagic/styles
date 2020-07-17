@@ -1,20 +1,22 @@
 // button types: google, twitter, medium, treehouse
-$button-type: google;
+$button-type: medium;
 
 @function button-filled($color) {
   @return (
     bg-#{$color} bg-#{$color}-dark--hover bg-#{$color}-darker--active color-white
+      bg-muted--disabled
   );
 }
 @function button-outlined($color) {
   @return (
     border-#{$color} border-#{$color}-darker--hover border-#{$color}-darkest--active
-      color-#{$color}-darker color-#{$color}-darkest--hover
+      color-#{$color}-darker color-#{$color}-darkest--hover border-muted--disabled
+      color-grey--disabled
   );
 }
 
 $google-button-map: (
-  extend: transition bg-muted--disabled opacity-p75--disabled uppercase fillet-s,
+  extend: transition opacity-p75--disabled uppercase fillet-s,
   grey: button-filled(grey),
   primary: button-filled(primary),
   secondary: button-filled(secondary),
@@ -22,7 +24,7 @@ $google-button-map: (
 );
 
 $twitter-button-map: (
-  extend: transition bg-muted--disabled opacity-p75--disabled bold fillet,
+  extend: transition opacity-p75--disabled bold fillet,
   grey: button-filled(grey),
   primary: button-filled(primary),
   secondary: button-filled(secondary),
@@ -30,8 +32,7 @@ $twitter-button-map: (
 );
 
 $medium-button-map: (
-  extend: transition border-muted--disabled opacity-p75--disabled fillet-rounded
-    border-2,
+  extend: transition opacity-p75--disabled fillet-rounded border-2,
   grey: button-outlined(grey),
   primary: button-outlined(primary),
   secondary: button-outlined(secondary),
@@ -39,8 +40,7 @@ $medium-button-map: (
 );
 
 $treehouse-button-map: (
-  extend: transition border-muted--disabled opacity-p75--disabled fillet-l bold
-    border-2,
+  extend: transition opacity-p75--disabled fillet-l bold border-2,
   grey: button-outlined(grey),
   primary: button-outlined(primary),
   secondary: button-outlined(secondary),
@@ -63,7 +63,7 @@ $treehouse-button-map: (
 }
 
 $button-sizes: (
-  extend: letter-spacing-p5,
+  extend: letter-spacing-p5 cursor-default--disabled,
   s: w-100 p-p5,
   base: w-150 p-p5,
   l: w-200 p-1,
