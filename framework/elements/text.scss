@@ -11,15 +11,21 @@ $text-selector-map: (
   uppercase: (
     text-transform: uppercase,
   ),
+  lowercase: (
+    text-transform: lowercase,
+  ),
+  underline: (
+    text-decoration: underline,
+  ),
 );
 
 $text-prop-map: (
   font-size: (
-    meta: 0.625rem,
-    tiny: 0.75rem,
-    small: 0.875rem,
-    base: 1rem,
-    large: 1.25rem,
+    xs: 0.625rem,
+    s: 0.75rem,
+    base: 0.875rem,
+    l: 1rem,
+    xl: 1.25rem,
   ),
   text-align: (
     left: left,
@@ -27,17 +33,18 @@ $text-prop-map: (
     center: center,
   ),
   text-shadow: (
-    shadow: 1px 1px #212121,
+    shadow: 1px 1px #ddd,
+    shadow-dark: 1px 1px #212121,
   ),
 );
 
 $text-map-title: (
-  tiny: 1.5rem,
-  small: 2rem,
+  xs: 1.5rem,
+  s: 2rem,
   base: 2.5rem,
-  large: 3rem,
-  xlarge: 3.5rem,
-  xxlarge: 4rem,
+  l: 3rem,
+  xl: 3.5rem,
+  xxl: 4rem,
 );
 
 @include generate(title, font-size, $text-map-title);

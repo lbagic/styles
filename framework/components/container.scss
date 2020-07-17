@@ -1,7 +1,33 @@
+$container-padding-map: (
+  xs: 15px,
+  s: 30px,
+  m: 40px,
+);
+
+$container-width-map: (
+  s: 750px,
+  m: 900px,
+  l: 1400px,
+  xl: 1600px,
+  expand: none,
+);
+
+@include generate(container-width, max-width, $container-width-map);
+@include generate(
+  container-padding,
+  padding-left padding-right,
+  $container-padding-map,
+  breakpoints
+);
+
 $container-map: (
-  extend: w-1-1 ph-1 mh-auto box mt-3 mb-5,
-  base: s_w-500 l_w-700,
-  large: s_w-500 m_w-s l_w-m,
+  extend: mh-auto content-box container-padding-xs s_container-padding-s
+    m_container-padding-m,
+  s: container-width-s,
+  base: container-width-m,
+  l: container-width-l,
+  xl: container-width-xl,
+  expand: container-width-expand,
 );
 
 @include extend(container, $container-map);

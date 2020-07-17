@@ -1,10 +1,10 @@
 $flex-prop-map: (
   display: (
     base: flex,
+    column: flex,
     inline: inline-flex,
   ),
   flex-direction: (
-    row: row,
     column: column,
   ),
   flex-wrap: (
@@ -39,4 +39,4 @@ $flex-prop-map: (
   ),
 );
 
-@include generateProps(flex, $flex-prop-map, breakpoints);
+@include generateProps(flex, $flex-prop-map);

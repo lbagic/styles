@@ -8,14 +8,17 @@ $display-selector-map: (
   inline-block: (
     display: inline-block,
   ),
-  display-none: (
+  none: (
     display: none,
   ),
-  display-initial: (
+  initial: (
     display: initial,
   ),
-  box: (
+  border-box: (
     box-sizing: border-box,
+  ),
+  content-box: (
+    box-sizing: content-box,
   ),
 );
 

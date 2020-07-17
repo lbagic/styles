@@ -1,8 +1,0 @@
-$decoration-map: (
-  underline: underline,
-  overline: overline,
-  line-through: line-through,
-  none: none,
-);
-
-@include generate(decoration, text-decoration, $decoration-map);

@@ -1,6 +1,7 @@
-$cursor-map: (
-  disable: not-allowed,
-  pointer: pointer,
+$cursor-selector-map: (
+  pointer: (
+    cursor: pointer,
+  ),
 );
 
-@include generate(cursor, cursor, $cursor-map);
+@include generateSelectors($cursor-selector-map);

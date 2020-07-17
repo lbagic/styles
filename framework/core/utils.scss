@@ -6,19 +6,19 @@
   @return $res;
 }
 
-@function buildSelector($selector) {
+@function build-selector($selector) {
   @return str-build($selector-type, $selector);
 }
 
-@function appendKey($key, $key2) {
-  @if $key2 != 'base' {
-    $key: str-build($key, $selector-key-divider, $key2);
-  }
-  @return $key;
+@function append-breakpoint($breakpoint, $selector) {
+  @return str-build($breakpoint, $breakpoint-divider, $selector);
 }
 
-@function prependBreakpoint($selector, $breakpoint) {
-  @return str-build($breakpoint, $selector-breakpoint-divider, $selector);
+@function append-key($key, $key2) {
+  @if $key2 != 'base' {
+    $key: str-build($key, $key-divider, $key2);
+  }
+  @return $key;
 }
 
 @function map-flatten($map) {
@@ -28,7 +28,7 @@
       $deepFlag: true;
       $map: map-remove($map, $key);
       @each $dKey, $dValue in $value {
-        $dKey: appendKey($key, $dKey);
+        $dKey: append-key($key, $dKey);
         $map: map-merge(
           $map,
           (
@@ -50,4 +50,16 @@
     $finalMap: map-merge($finalMap, $map);
   }
   @return $finalMap;
+}
+
+@function modify-map-values($map, $prepend: '', $append: '') {
+  @each $key, $value in $map {
+    $map: map-merge(
+      $map,
+      (
+        $key: #{$prepend}#{$value}#{$append},
+      )
+    );
+  }
+  @return $map;
 }

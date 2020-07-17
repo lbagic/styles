@@ -1,8 +1,9 @@
 $fillet-map: (
-  small: 0.125rem,
+  s: 0.125rem,
   base: 0.25rem,
-  large: 0.5rem,
-  full: 9999px,
+  l: 0.5rem,
+  xl: 1rem,
+  rounded: 9999px,
 );
 
 @include generate(fillet, border-radius, $fillet-map);

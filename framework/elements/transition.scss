@@ -1,18 +1,19 @@
 $transition-map: (
   transition-duration: (
     base: 0.2s,
-    slow: 0.33s,
     fast: 0.05s,
+    slow: 0.33s,
+    xslow: 0.66s,
   ),
   transition-timing-function: (
     base: ease-in-out,
   ),
   transition-property: (
     base: all,
-    bg: background,
-    color: color,
-    colors: background color fill,
-    fill: fill,
+    color: background color fill box-shadow opacity,
+    size: width height,
+    position: position top bottom left right margin padding grid-area flex-wrap
+      flex,
   ),
 );
 

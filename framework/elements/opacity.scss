@@ -1,9 +1,9 @@
 $opacity-map: (
-  1: 1,
-  0p75: 0.75,
-  0p5: 0.5,
-  0p25: 0.25,
-  0: 0,
+  '0': 0,
+  'p25': 0.25,
+  'p5': 0.5,
+  'p75': 0.75,
+  '1': 1,
 );
 
 @include generate(opacity, opacity, $opacity-map);

@@ -1,5 +1,5 @@
 @mixin _stateExtender($selector, $states) {
-  $nextStateIndex: str-index($states, $selector-state-divider);
+  $nextStateIndex: str-index($states, $state-divider);
   $currentState: $states;
   $nextState: null;
   @if $nextStateIndex {
@@ -14,11 +14,11 @@
   }
 }
 
-@mixin extendList($selectors) {
-  @if $selectors != null {
-    @each $selector in $selectors {
-      $selector: buildSelector($selector);
-      $stateIndex: str-index($selector, $selector-state-divider);
+@mixin _extendList($list) {
+  @if $list != null {
+    @each $selector in $list {
+      $selector: build-selector($selector);
+      $stateIndex: str-index($selector, $state-divider);
       @if $stateIndex == null {
         @extend #{$selector};
       } @else {
@@ -35,29 +35,38 @@
   }
 }
 
-@mixin extendMap($map, $baseExtensions: null) {
+@mixin _extendMap($map, $baseExtensions: null) {
   $localExtensions: map-get($map, extend);
   @each $key, $value in $map {
     @if $key != extend {
       &#{if($key == 'base', '', -#{$key})} {
         @if type-of($value) == 'map' {
-          @include extendMap($value, $baseExtensions);
+          @include _extendMap($value, $baseExtensions);
         } @else {
-          @include extendList($value);
-          @include extendList($baseExtensions);
-          @include extendList($localExtensions);
+          @include _extendList($value);
+          @include _extendList($baseExtensions);
+          @include _extendList($localExtensions);
         }
       }
     }
   }
 }
 
-@mixin extend($selector, $extensions, $baseExtensions: null) {
-  #{buildSelector($selector)} {
-    @if type-of($extensions) == 'map' {
-      @include extendMap($extensions, $baseExtensions);
-    } @else {
-      @include extendList($extensions);
+@mixin _extend($input, $baseExtensions: null) {
+  @if type-of($input) == 'map' {
+    @include _extendMap($input, $baseExtensions);
+  } @else {
+    @include _extendList($input);
+  }
+}
+
+@mixin extend($selectorOrInput, $input: null, $baseExtensions: null) {
+  @if $input == null {
+    $input: $selectorOrInput;
+    @include _extend($input);
+  } @else {
+    #{build-selector($selectorOrInput)} {
+      @include _extend($input);
     }
   }
 }
