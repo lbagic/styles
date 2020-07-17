@@ -10,10 +10,9 @@ $transition-map: (
   ),
   transition-property: (
     base: all,
-    color: background color fill box-shadow opacity,
+    color: background color fill box-shadow opacity border-color,
     size: width height,
-    position: position top bottom left right margin padding grid-area flex-wrap
-      flex,
+    position: position top bottom left right margin padding grid-area,
   ),
 );
 

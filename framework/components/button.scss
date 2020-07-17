@@ -1,17 +1,75 @@
-$button-map: (
-  extend: transition bg-grey--disabled uppercase p-1,
-  primary: bg-primary bg-primary-dark--hover bg-primary-darker--active
-    bg-primary-darker--focus color-white,
-  secondary: bg-secondary bg-secondary-dark--hover bg-secondary-darker--active
-    bg-secondary-darker--focus color-white,
+// button types: google, twitter, medium, treehouse
+$button-type: google;
+
+@function button-filled($color) {
+  @return (
+    bg-#{$color} bg-#{$color}-dark--hover bg-#{$color}-darker--active color-white
+  );
+}
+@function button-outlined($color) {
+  @return (
+    border-#{$color} border-#{$color}-darker--hover border-#{$color}-darkest--active
+      color-#{$color}-darker color-#{$color}-darkest--hover
+  );
+}
+
+$google-button-map: (
+  extend: transition bg-muted--disabled opacity-p75--disabled uppercase fillet-s,
+  grey: button-filled(grey),
+  primary: button-filled(primary),
+  secondary: button-filled(secondary),
+  tertiary: button-filled(tertiary),
 );
+
+$twitter-button-map: (
+  extend: transition bg-muted--disabled opacity-p75--disabled bold fillet,
+  grey: button-filled(grey),
+  primary: button-filled(primary),
+  secondary: button-filled(secondary),
+  tertiary: button-filled(tertiary),
+);
+
+$medium-button-map: (
+  extend: transition border-muted--disabled opacity-p75--disabled fillet-rounded
+    border-2,
+  grey: button-outlined(grey),
+  primary: button-outlined(primary),
+  secondary: button-outlined(secondary),
+  tertiary: button-outlined(tertiary),
+);
+
+$treehouse-button-map: (
+  extend: transition border-muted--disabled opacity-p75--disabled fillet-l bold
+    border-2,
+  grey: button-outlined(grey),
+  primary: button-outlined(primary),
+  secondary: button-outlined(secondary),
+  tertiary: button-outlined(tertiary),
+);
+
+@function button-type-picker() {
+  @if $button-type == google {
+    @return $google-button-map;
+  }
+  @if $button-type == twitter {
+    @return $twitter-button-map;
+  }
+  @if $button-type == medium {
+    @return $medium-button-map;
+  }
+  @if $button-type == treehouse {
+    @return $treehouse-button-map;
+  }
+}
 
 $button-sizes: (
-  small: w-100,
-  medium: w-200,
-  large: w-400,
-  expand: w-1-1,
+  extend: letter-spacing-p5,
+  s: w-100 p-p5,
+  base: w-150 p-p5,
+  l: w-200 p-1,
+  xl: w-250 p-1p5,
+  expand: w-1-1 p-1,
 );
 
-@include extend(button, $button-map);
+@include extend(button, button-type-picker());
 @include extend(button, $button-sizes);
