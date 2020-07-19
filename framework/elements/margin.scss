@@ -3,10 +3,11 @@ $margin-map: (
   '0': 0,
   'p5': 0.5rem,
   '1': 1rem,
+  '1p5': 1.5rem,
   '2': 2rem,
   '3': 3rem,
   '5': 5rem,
-  '10': 10rem,
+  '7': 7rem,
 );
 
 @include generate(m, margin, $margin-map, breakpoints);

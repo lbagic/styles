@@ -8,7 +8,6 @@ $grid-prop-map: (
       '1': 1rem,
       '2': 2rem,
       '3': 3rem,
-      '5': 5rem,
     ),
   ),
 );
@@ -28,6 +27,13 @@ $grid-columns-prop-map: (
       '300': repeat(auto-fill, minmax(300px, 1fr)),
       '400': repeat(auto-fill, minmax(400px, 1fr)),
       '500': repeat(auto-fill, minmax(500px, 1fr)),
+    ),
+    fit: (
+      '100': repeat(auto-fit, minmax(100px, 1fr)),
+      '200': repeat(auto-fit, minmax(200px, 1fr)),
+      '300': repeat(auto-fit, minmax(300px, 1fr)),
+      '400': repeat(auto-fit, minmax(400px, 1fr)),
+      '500': repeat(auto-fit, minmax(500px, 1fr)),
     ),
   ),
 );

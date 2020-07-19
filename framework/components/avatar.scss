@@ -1,0 +1,8 @@
+$avatar-map: (
+  extend: fillet-rounded,
+  s: w-30,
+  base: w-50,
+  l: w-100,
+);
+
+@include extend(avatar, $avatar-map);

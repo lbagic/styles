@@ -1,2 +1,14 @@
-$border-map: modify-map-values($color-map, '1px solid ');
-@include generate(border, border, $border-map);
+// $border-map: modify-map-values($color-map, '1px solid ');
+$border-width-map: (
+  border-width: (
+    base: 1px,
+    '2': 2px,
+  ),
+  border-style: (
+    base: solid,
+    '2': solid,
+  ),
+);
+
+@include generateProps(border, $border-width-map);
+@include generate(border, border-color, $color-map);
