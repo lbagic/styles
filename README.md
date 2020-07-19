@@ -1,1 +1,1 @@
-Documentation: https://github.com/lbzg/styles/tree/docs
+Documentation: https://github.com/lbzg/styles/tree/v1-docs
