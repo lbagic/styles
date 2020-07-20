@@ -7,7 +7,7 @@ $margin-map: (
   '2': 2rem,
   '3': 3rem,
   '5': 5rem,
-  '10': 10rem,
+  '7': 7rem,
 );
 
 @include generate(m, margin, $margin-map, breakpoints);
