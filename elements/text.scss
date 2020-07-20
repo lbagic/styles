@@ -1,0 +1,70 @@
+.bold {
+  font-weight: bold;
+}
+.italic {
+  font-style: italic;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
+.underline {
+  text-decoration: underline;
+}
+
+.text-xs {
+  font-size: 0.625rem;
+}
+.text-s {
+  font-size: 0.75rem;
+}
+.text {
+  font-size: 0.875rem;
+}
+.text-l {
+  font-size: 1rem;
+}
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.title-xs {
+  font-size: 1.5rem;
+}
+.title-s {
+  font-size: 2rem;
+}
+.title {
+  font-size: 2.5rem;
+}
+.title-l {
+  font-size: 3rem;
+}
+.title-xl {
+  font-size: 3.5rem;
+}
+.title-xxl {
+  font-size: 4rem;
+}
+
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px #ddd;
+}
+.text-shadow-dark {
+  text-shadow: 1px 1px #212121;
+}

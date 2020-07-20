@@ -1,0 +1,205 @@
+// PADDINGS: p, pt (top), pr (right), pb (bottom), pl (left), ph (horizontal), pv (vertical)
+// SIZES (rem): auto, 0, 0p5, 1, 1p5, 2, 3, 5, 7
+
+// top padding
+.pt-auto {
+  padding-top: auto;
+}
+.pt-0 {
+  padding-top: 0rem;
+}
+.pt-0p5 {
+  padding-top: 0.5rem;
+}
+.pt-1 {
+  padding-top: 1rem;
+}
+.pt-1p5 {
+  padding-top: 1.5rem;
+}
+.pt-2 {
+  padding-top: 2rem;
+}
+.pt-3 {
+  padding-top: 3rem;
+}
+.pt-5 {
+  padding-top: 5rem;
+}
+.pt-7 {
+  padding-top: 7rem;
+}
+
+// right padding
+.pr-auto {
+  padding-right: auto;
+}
+.pr-0 {
+  padding-right: 0rem;
+}
+.pr-0p5 {
+  padding-right: 0.5rem;
+}
+.pr-1 {
+  padding-right: 1rem;
+}
+.pr-1p5 {
+  padding-right: 1.5rem;
+}
+.pr-2 {
+  padding-right: 2rem;
+}
+.pr-3 {
+  padding-right: 3rem;
+}
+.pr-5 {
+  padding-right: 5rem;
+}
+.pr-7 {
+  padding-right: 7rem;
+}
+
+// bottom padding
+.pb-auto {
+  padding-bottom: auto;
+}
+.pb-0 {
+  padding-bottom: 0rem;
+}
+.pb-0p5 {
+  padding-bottom: 0.5rem;
+}
+.pb-1 {
+  padding-bottom: 1rem;
+}
+.pb-1p5 {
+  padding-bottom: 1.5rem;
+}
+.pb-2 {
+  padding-bottom: 2rem;
+}
+.pb-3 {
+  padding-bottom: 3rem;
+}
+.pb-5 {
+  padding-bottom: 5rem;
+}
+.pb-7 {
+  padding-bottom: 7rem;
+}
+
+// left padding
+.pl-auto {
+  padding-left: auto;
+}
+.pl-0 {
+  padding-left: 0rem;
+}
+.pl-0p5 {
+  padding-left: 0.5rem;
+}
+.pl-1 {
+  padding-left: 1rem;
+}
+.pl-1p5 {
+  padding-left: 1.5rem;
+}
+.pl-2 {
+  padding-left: 2rem;
+}
+.pl-3 {
+  padding-left: 3rem;
+}
+.pl-5 {
+  padding-left: 5rem;
+}
+.pl-7 {
+  padding-left: 7rem;
+}
+
+// horizontal padding
+.ph-auto {
+  @extend .pl-auto, .pr-auto;
+}
+.ph-0 {
+  @extend .pl-0, .pr-0;
+}
+.ph-0p5 {
+  @extend .pl-0p5, .pr-0p5;
+}
+.ph-1 {
+  @extend .pl-1, .pr-1;
+}
+.ph-1p5 {
+  @extend .pl-1p5, .pr-1p5;
+}
+.ph-2 {
+  @extend .pl-2, .pr-2;
+}
+.ph-3 {
+  @extend .pl-3, .pr-3;
+}
+.ph-5 {
+  @extend .pl-5, .pr-5;
+}
+.ph-7 {
+  @extend .pl-7, .pr-7;
+}
+
+// vertical padding
+.ph-auto {
+  @extend .pt-auto, .pb-auto;
+}
+.ph-0 {
+  @extend .pt-0, .pb-0;
+}
+.ph-0p5 {
+  @extend .pt-0p5, .pb-0p5;
+}
+.ph-1 {
+  @extend .pt-1, .pb-1;
+}
+.ph-1p5 {
+  @extend .pt-1p5, .pb-1p5;
+}
+.ph-2 {
+  @extend .pt-2, .pb-2;
+}
+.ph-3 {
+  @extend .pt-3, .pb-3;
+}
+.ph-5 {
+  @extend .pt-5, .pb-5;
+}
+.ph-7 {
+  @extend .pt-7, .pb-7;
+}
+
+// every padding
+.p-auto {
+  @extend .pt-auto, .pr-auto, .pb-auto, .pl-auto;
+}
+.p-0 {
+  @extend .pt-0, .pr-0, .pb-0, .pl-0;
+}
+.p-0p5 {
+  @extend .pt-0p5, .pr-0p5, .pb-0p5, .pl-0p5;
+}
+.p-1 {
+  @extend .pt-1, .pr-1, .pb-1, .pl-1;
+}
+.p-1p5 {
+  @extend .pt-1p5, .pr-1p5, .pb-1p5, .pl-1p5;
+}
+.p-2 {
+  @extend .pt-2, .pr-2, .pb-2, .pl-2;
+}
+.p-3 {
+  @extend .pt-3, .pr-3, .pb-3, .pl-3;
+}
+.p-5 {
+  @extend .pt-5, .pr-5, .pb-5, .pl-5;
+}
+.p-7 {
+  @extend .pt-7, .pr-7, .pb-7, .pl-7;
+}

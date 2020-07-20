@@ -1,0 +1,40 @@
+%container-base {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: content-box;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include s() {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include m() {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.container-s {
+  @extend %container-base;
+  max-width: 750px;
+}
+
+.container {
+  @extend %container-base;
+  max-width: 900px;
+}
+
+.container-l {
+  @extend %container-base;
+  max-width: 1400px;
+}
+
+.container-xl {
+  @extend %container-base;
+  max-width: 1600px;
+}
+
+.container-expand {
+  @extend %container-base;
+  max-width: none;
+}

@@ -1,0 +1,205 @@
+// MARGINS: m, mt (top), mr (right), mb (bottom), ml (left), mh (horizontal), mv (vertical)
+// SIZES (rem): auto, 0, 0p5, 1, 1p5, 2, 3, 5, 7
+
+// top margin
+.mt-auto {
+  margin-top: auto;
+}
+.mt-0 {
+  margin-top: 0rem;
+}
+.mt-0p5 {
+  margin-top: 0.5rem;
+}
+.mt-1 {
+  margin-top: 1rem;
+}
+.mt-1p5 {
+  margin-top: 1.5rem;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.mt-3 {
+  margin-top: 3rem;
+}
+.mt-5 {
+  margin-top: 5rem;
+}
+.mt-7 {
+  margin-top: 7rem;
+}
+
+// right margin
+.mr-auto {
+  margin-right: auto;
+}
+.mr-0 {
+  margin-right: 0rem;
+}
+.mr-0p5 {
+  margin-right: 0.5rem;
+}
+.mr-1 {
+  margin-right: 1rem;
+}
+.mr-1p5 {
+  margin-right: 1.5rem;
+}
+.mr-2 {
+  margin-right: 2rem;
+}
+.mr-3 {
+  margin-right: 3rem;
+}
+.mr-5 {
+  margin-right: 5rem;
+}
+.mr-7 {
+  margin-right: 7rem;
+}
+
+// bottom margin
+.mb-auto {
+  margin-bottom: auto;
+}
+.mb-0 {
+  margin-bottom: 0rem;
+}
+.mb-0p5 {
+  margin-bottom: 0.5rem;
+}
+.mb-1 {
+  margin-bottom: 1rem;
+}
+.mb-1p5 {
+  margin-bottom: 1.5rem;
+}
+.mb-2 {
+  margin-bottom: 2rem;
+}
+.mb-3 {
+  margin-bottom: 3rem;
+}
+.mb-5 {
+  margin-bottom: 5rem;
+}
+.mb-7 {
+  margin-bottom: 7rem;
+}
+
+// left margin
+.ml-auto {
+  margin-left: auto;
+}
+.ml-0 {
+  margin-left: 0rem;
+}
+.ml-0p5 {
+  margin-left: 0.5rem;
+}
+.ml-1 {
+  margin-left: 1rem;
+}
+.ml-1p5 {
+  margin-left: 1.5rem;
+}
+.ml-2 {
+  margin-left: 2rem;
+}
+.ml-3 {
+  margin-left: 3rem;
+}
+.ml-5 {
+  margin-left: 5rem;
+}
+.ml-7 {
+  margin-left: 7rem;
+}
+
+// horizontal margin
+.mh-auto {
+  @extend .ml-auto, .mr-auto;
+}
+.mh-0 {
+  @extend .ml-0, .mr-0;
+}
+.mh-0p5 {
+  @extend .ml-0p5, .mr-0p5;
+}
+.mh-1 {
+  @extend .ml-1, .mr-1;
+}
+.mh-1p5 {
+  @extend .ml-1p5, .mr-1p5;
+}
+.mh-2 {
+  @extend .ml-2, .mr-2;
+}
+.mh-3 {
+  @extend .ml-3, .mr-3;
+}
+.mh-5 {
+  @extend .ml-5, .mr-5;
+}
+.mh-7 {
+  @extend .ml-7, .mr-7;
+}
+
+// vertical margin
+.mh-auto {
+  @extend .mt-auto, .mb-auto;
+}
+.mh-0 {
+  @extend .mt-0, .mb-0;
+}
+.mh-0p5 {
+  @extend .mt-0p5, .mb-0p5;
+}
+.mh-1 {
+  @extend .mt-1, .mb-1;
+}
+.mh-1p5 {
+  @extend .mt-1p5, .mb-1p5;
+}
+.mh-2 {
+  @extend .mt-2, .mb-2;
+}
+.mh-3 {
+  @extend .mt-3, .mb-3;
+}
+.mh-5 {
+  @extend .mt-5, .mb-5;
+}
+.mh-7 {
+  @extend .mt-7, .mb-7;
+}
+
+// every margin
+.m-auto {
+  @extend .mt-auto, .mr-auto, .mb-auto, .ml-auto;
+}
+.m-0 {
+  @extend .mt-0, .mr-0, .mb-0, .ml-0;
+}
+.m-0p5 {
+  @extend .mt-0p5, .mr-0p5, .mb-0p5, .ml-0p5;
+}
+.m-1 {
+  @extend .mt-1, .mr-1, .mb-1, .ml-1;
+}
+.m-1p5 {
+  @extend .mt-1p5, .mr-1p5, .mb-1p5, .ml-1p5;
+}
+.m-2 {
+  @extend .mt-2, .mr-2, .mb-2, .ml-2;
+}
+.m-3 {
+  @extend .mt-3, .mr-3, .mb-3, .ml-3;
+}
+.m-5 {
+  @extend .mt-5, .mr-5, .mb-5, .ml-5;
+}
+.m-7 {
+  @extend .mt-7, .mr-7, .mb-7, .ml-7;
+}
