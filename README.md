@@ -2,7 +2,8 @@ Sass utility-oriented framework.
 
 # Installation
 
-- clone and point preprocessor to index.scss
+- git clone git@github.com:lbzg/styles.git
+- point preprocessor to styles/index.scss
 
 Vue example:
 
