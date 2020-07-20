@@ -14,10 +14,10 @@ $display-selector-map: (
   initial: (
     display: initial,
   ),
-  border-box: (
+  box: (
     box-sizing: border-box,
   ),
-  content-box: (
+  content: (
     box-sizing: content-box,
   ),
 );
